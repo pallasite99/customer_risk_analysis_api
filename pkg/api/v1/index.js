@@ -1,5 +1,4 @@
 const express = require('express')
-const config = require('../../../config')
 const mysql = require('mysql2')
 const pool = mysql.createPool({
   user: 'root',
