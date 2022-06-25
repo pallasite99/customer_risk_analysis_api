@@ -1,6 +1,8 @@
 # customer_risk_analysis_api
 Connecting to DB and writing a simple API to display risky profiles of customers according to the data given as input
 
+![customer_risk_analysis_concept drawio](https://user-images.githubusercontent.com/26508636/175780245-76b9e93a-3653-455f-93c9-09eca667f54e.png)
+
 ### Sample API
 
 ```js
