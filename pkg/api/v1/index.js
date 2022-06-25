@@ -28,8 +28,8 @@ app.get('/risky_identities/:customer_id', async (req, res) => {
       res.json({ status: '502 internal server error' })
     }
     if (!results[0]) {
-      const email_query = 'SELECT email FROM risky_email WHERE customer_id = ?'
-      pool.query(email_query, [req.params.customer_id], (error, results) => {
+      const emailQuery = 'SELECT email FROM risky_email WHERE customer_id = ?'
+      pool.query(emailQuery, [req.params.customer_id], (error, results) => {
         if (error) {
           res.json({ status: '502 internal server error' })
         }
