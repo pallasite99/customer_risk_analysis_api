@@ -22,16 +22,16 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
-app.get("/risky_identities/:customer_id", async(req, res) => {
-  const query = "SELECT email, phone, creditcard FROM test_view WHERE customer_id = ?";
-  pool.query(query, [ req.params.customer_id ], (error, results) => {
-    if(error) {
-      res.json({status: '502 internal server error'});
+app.get('/risky_identities/:customer_id', async (req, res) => {
+  const query = 'SELECT email, phone, creditcard FROM test_view WHERE customer_id = ?'
+  pool.query(query, [req.params.customer_id], (error, results) => {
+    if (error) {
+      res.json({ status: '502 internal server error' })
     }
-    if(!results[0]) {
-      res.json({status: '404 not found'});
+    if (!results[0]) {
+      res.json({ status: '404 not found' })
     } else {
-      res.json(results[0]);
+      res.json(results[0])
     }
-  });
-});
+  })
+})
