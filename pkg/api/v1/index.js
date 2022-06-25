@@ -28,7 +28,17 @@ app.get('/risky_identities/:customer_id', async (req, res) => {
       res.json({ status: '502 internal server error' })
     }
     if (!results[0]) {
-      res.json({ status: '404 not found' })
+      const email_query = 'SELECT email FROM risky_email WHERE customer_id = ?'
+      pool.query(email_query, [req.params.customer_id], (error, results) => {
+        if (error) {
+          res.json({ status: '502 internal server error' })
+        }
+        if(!results[0]) {
+          res.json({ status: '404 not found' })
+        } else {
+          res.json(results[0])
+        }
+      })
     } else {
       res.json(results[0])
     }
