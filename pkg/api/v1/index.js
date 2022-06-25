@@ -33,7 +33,7 @@ app.get('/risky_identities/:customer_id', async (req, res) => {
         if (error) {
           res.json({ status: '502 internal server error' })
         }
-        if(!results[0]) {
+        if (!results[0]) {
           res.json({ status: '404 not found' })
         } else {
           res.json(results[0])
