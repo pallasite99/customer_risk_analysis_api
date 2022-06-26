@@ -9,5 +9,5 @@ all: run
 
 # start HTTP server in listening mode
 run: 
-cd $SRC_DIR/pkg/api/v1 
+cd "$SRC_DIR/pkg/api/v1"
 node index.js
