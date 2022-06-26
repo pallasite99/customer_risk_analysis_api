@@ -59,7 +59,7 @@ app.get('/risky_identities/:customer_id', async (req, res) => {
         }
       })
     } else {
-      // this contains the relevant data in JSON format about 
+      // this contains the relevant data in JSON format about
       // email,phone number and creditcard info for a specified customer_id
       res.json(results[0])
     }
