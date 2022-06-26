@@ -35,14 +35,14 @@ app.listen(port, () => {
 
 // insert given custpmer_id and email into risky_email table
 // returns status 200 if OK else error status code
-app.get("/insert/risky_email/:customer_id/email/:email", (req, res) => {
-    let insertEmailQuery = 'INSERT INTO risky_email VALUES (?, ?)'
-    pool.query(insertEmailQuery, [req.params.customer_id, req.params.email], (error, results) => {
-      if (error) {
-        res.json(error)
-      } else {
-        res.sendStatus(200)
-        res.json(results[0])
-      }
-    })
+app.get('/insert/risky_email/:customer_id/email/:email', (req, res) => {
+  const insertEmailQuery = 'INSERT INTO risky_email VALUES (?, ?)'
+  pool.query(insertEmailQuery, [req.params.customer_id, req.params.email], (error, results) => {
+    if (error) {
+      res.json(error)
+    } else {
+      res.sendStatus(200)
+      res.json(results[0])
+    }
+  })
 })
