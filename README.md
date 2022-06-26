@@ -3,6 +3,12 @@ Connecting to DB and writing a simple API to display risky profiles of customers
 
 ![customer_risk_analysis_concept drawio](https://user-images.githubusercontent.com/26508636/175780245-76b9e93a-3653-455f-93c9-09eca667f54e.png)
 
+## What does this do?
+* Is this just yet another run of the mill code done for getting a job? Nope
+* It has simple support for CRUD operations using mysql and express js, which is understandable, extendable and can be implemented in any other language after understanding the flow
+* The focus here was on the process and not the end result, which is an important value for any developer
+* It makes use of GH workflows like nodejs linter, super linter which help in CI for running static checks against modifications made in existing / modified code across different langauges like bash, nodejs, mysql, etc.
+
 ## Sample API
 
 ```js
