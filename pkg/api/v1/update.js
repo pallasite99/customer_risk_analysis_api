@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 // keep our app in listening mode for all incoming requests
 app.listen(port, () => {
-  console.log(`insert app listening at http://localhost:${port}`)
+  console.log(`app listening at http://localhost:${port}`)
 })
 
 app.get('/update/risky_email/:customer_id/email/:email', (req, res) => {
