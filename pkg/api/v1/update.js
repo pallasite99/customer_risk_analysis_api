@@ -34,8 +34,8 @@ app.listen(port, () => {
 })
 
 app.get('/update/risky_email/:customer_id/email/:email', (req, res) => {
-    const updateEmailQuery = 'UPDATE risky_email SET email=? WHERE customer_id=?'
-    pool.query(updateEmailQuery, [req.params.email, req.params.customer_id], (error, results) => {
+  const updateEmailQuery = 'UPDATE risky_email SET email=? WHERE customer_id=?'
+  pool.query(updateEmailQuery, [req.params.email, req.params.customer_id], (error, results) => {
     if (error) {
       res.json(error)
     } else {
@@ -46,8 +46,8 @@ app.get('/update/risky_email/:customer_id/email/:email', (req, res) => {
 })
 
 app.get('/update/risky_phone/:customer_id/phone/:phone', (req, res) => {
-    const updatePhoneQuery = 'UPDATE risky_phone SET phone=? WHERE customer_id=?'
-    pool.query(updatePhoneQuery, [req.params.phone, req.params.customer_id], (error, results) => {
+  const updatePhoneQuery = 'UPDATE risky_phone SET phone=? WHERE customer_id=?'
+  pool.query(updatePhoneQuery, [req.params.phone, req.params.customer_id], (error, results) => {
     if (error) {
       res.json(error)
     } else {
@@ -58,8 +58,8 @@ app.get('/update/risky_phone/:customer_id/phone/:phone', (req, res) => {
 })
 
 app.get('/update/risky_creditcard/:customer_id/creditcard/:creditcard', (req, res) => {
-    const updateCreditCardQuery = 'UPDATE risky_creditcard SET creditcard=? WHERE customer_id=?'
-    pool.query(updateCreditCardQuery, [req.params.creditcard, req.params.customer_id], (error, results) => {
+  const updateCreditCardQuery = 'UPDATE risky_creditcard SET creditcard=? WHERE customer_id=?'
+  pool.query(updateCreditCardQuery, [req.params.creditcard, req.params.customer_id], (error, results) => {
     if (error) {
       res.json(error)
     } else {
