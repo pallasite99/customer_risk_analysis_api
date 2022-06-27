@@ -58,6 +58,8 @@ app.get('/risky_identities/:customer_id', async (req, res) => {
 ### Output
 1. **For entity found**
 
+![insomnia_rest_client](https://user-images.githubusercontent.com/26508636/175968658-bd3b43fe-fa1a-4a3b-ac51-77b89b372055.png)
+
 ![result_risky_customer](https://user-images.githubusercontent.com/26508636/175752950-5c2d23fb-a2b2-4940-ba30-03c71908967d.png)
 
 2. **Unknown entity**
