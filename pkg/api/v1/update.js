@@ -16,7 +16,7 @@ const pool = mysql.createPool({
 const app = express()
 // arbitrary port specified, anything apart from 3306 used by mysql would work on localhost
 // unless there is any other service running on the arbitrary port prior to running this sample
-const port = 3020
+const port = 3030
 app.use(express.json())
 app.use(
   express.urlencoded({
@@ -33,11 +33,9 @@ app.listen(port, () => {
   console.log(`insert app listening at http://localhost:${port}`)
 })
 
-// insert given customer_id and email into risky_email table
-// returns status 200 if OK else error status code
-app.get('/insert/risky_email/:customer_id/email/:email', (req, res) => {
-  const insertEmailQuery = 'INSERT INTO risky_email VALUES (?, ?)'
-  pool.query(insertEmailQuery, [req.params.customer_id, req.params.email], (error, results) => {
+app.get('/update/risky_email/:customer_id/email/:email', (req, res) => {
+    const updateEmailQuery = 'UPDATE risky_email SET email=? WHERE customer_id=?'
+    pool.query(updateEmailQuery, [req.params.email, req.params.customer_id], (error, results) => {
     if (error) {
       res.json(error)
     } else {
@@ -47,11 +45,9 @@ app.get('/insert/risky_email/:customer_id/email/:email', (req, res) => {
   })
 })
 
-// insert given customer_id and phone into risky_phone table
-// returns status 200 if OK else error status code
-app.get('/insert/risky_phone/:customer_id/phone/:phone', (req, res) => {
-  const insertEmailQuery = 'INSERT INTO risky_phone VALUES (?, ?)'
-  pool.query(insertEmailQuery, [req.params.customer_id, req.params.phone], (error, results) => {
+app.get('/update/risky_phone/:customer_id/phone/:phone', (req, res) => {
+    const updatePhoneQuery = 'UPDATE risky_phone SET phone=? WHERE customer_id=?'
+    pool.query(updatePhoneQuery, [req.params.phone, req.params.customer_id], (error, results) => {
     if (error) {
       res.json(error)
     } else {
@@ -61,11 +57,9 @@ app.get('/insert/risky_phone/:customer_id/phone/:phone', (req, res) => {
   })
 })
 
-// insert given customer_id and creditcard into risky_creditcard table
-// returns status 200 if OK else error status code
-app.get('/insert/risky_creditcard/:customer_id/creditcard/:creditcard', (req, res) => {
-  const insertEmailQuery = 'INSERT INTO risky_creditcard VALUES (?, ?)'
-  pool.query(insertEmailQuery, [req.params.customer_id, req.params.creditcard], (error, results) => {
+app.get('/update/risky_creditcard/:customer_id/creditcard/:creditcard', (req, res) => {
+    const updateCreditCardQuery = 'UPDATE risky_creditcard SET creditcard=? WHERE customer_id=?'
+    pool.query(updateCreditCardQuery, [req.params.creditcard, req.params.customer_id], (error, results) => {
     if (error) {
       res.json(error)
     } else {
